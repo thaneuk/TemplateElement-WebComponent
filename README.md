@@ -2,6 +2,23 @@
 
 Attempt at a simple template and parent/child data inheritance in a web component.
 
+Designed to work with components extending which are imported e.g.
+```
+<link rel="import" href="my.component.html">
+```
+Composition of my.component.html
+```
+<template id="my-component">
+
+    <link rel="stylesheet" href="./my.component.css">
+
+    <p bind="data.name.value"></p>
+
+</template>
+
+<script src="./my.component.js"></script>
+```
+
 e.g.
 ```
 <component-name data-name="dataPath"></component-name>
