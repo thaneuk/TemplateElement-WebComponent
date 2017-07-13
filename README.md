@@ -15,9 +15,9 @@ this.updateBindings() can be called to attempt to re-populate.
 
 Added watcher functions to look for primitive value changes on a timer (experimental) and attribute change. Currently 0.01ms time expense.
 
-useage in a component
+useage in a component:
 ```
-    this.$watch('data.app.value', (oldValue, newValue) => {
-        // do something
-    });
+this.$watch('data.app.value', (oldValue, newValue) => {
+    // do something
+});
 ```
