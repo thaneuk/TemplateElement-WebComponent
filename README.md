@@ -12,3 +12,12 @@ Will scan parent component or parent host default view (window) for the data pat
 When imported the Template will also try to fill the innerText of elements with any bind tags found and create attributes e.g. `[title]="<datapath>"` would create a title attribute, populated if data found.
 
 this.updateBindings() can be called to attempt to re-populate.
+
+Added watcher functions to look for primitive value changes on a timer (experimental) and attribute change. Currently 0.01ms time expense.
+
+useage in a component
+```
+    this.$watch('data.app.value', (oldValue, newValue) => {
+        // do something
+    });
+```
