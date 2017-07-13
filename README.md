@@ -19,9 +19,9 @@ Composition of my.component.html
 <script src="./my.component.js"></script>
 ```
 
-e.g.
+Html use
 ```
-<component-name data-name="dataPath"></component-name>
+<my-component data-name="dataSourcePath"></my-component>
 ```
 
 Will scan parent component or parent host default view (window) for the data path described in attribute and assign it to `this.data[name]`. Multiples are accomodated.
