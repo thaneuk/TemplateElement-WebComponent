@@ -46,10 +46,12 @@
         }
 
         disconnectedCallback() {
+            /* ensure watchers are cleared at component removal, if a child component uses disconnectedCallback then ensure to call super */
             this.$clearWatches();
         }
 
         attributeChangedCallback() {
+            /* check watches on attribute change, if a child component uses attributeChangedCallback then ensure to call super */
             this.$checkWatchers();
         }
 
@@ -153,6 +155,7 @@
          * @param path {string} path to primitive value to watch
          * @param fn {function} call when value changes
          * @returns {*}
+         * @private
          */
         $watch(path, fn) {
             try {
@@ -175,6 +178,7 @@
 
         /**
          * clear all watches on web component
+         * @private
          */
         $clearWatches() {
             this.$watchers.forEach(watch => {
@@ -186,6 +190,7 @@
 
         /**
          * scan all watches for changes
+         * @private
          */
         $checkWatchers() {
             this.$watchers.length && this.$watchers.forEach(watch => {
@@ -206,3 +211,4 @@
     window.TemplateElement = TemplateElement;
 
 })(window);
+
