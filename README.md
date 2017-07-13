@@ -17,7 +17,7 @@ Added watcher functions to look for primitive value changes on a timer (experime
 
 useage in a component:
 ```
-this.$watch('data.app.value', (oldValue, newValue) => {
+this.$watch('data.name.value', (oldValue, newValue) => {
     // do something
 });
 ```
