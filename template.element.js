@@ -12,12 +12,15 @@
     'use strict';
 
     class TemplateElement extends HTMLElement {
-        constructor() {
+        /**
+         * @param ownerDoc {object} ownerDocument of script extending from TemplateElement to ensure scope of script is preserved
+         */
+        constructor(ownerDoc) {
             super();
 
             let shadowRoot = this.attachShadow({mode: 'open'});
             /* important webcomponent templates with id matching tagName in lowercase e.g. <template id="tag-name"></template> */
-            let content = document.currentScript.ownerDocument.querySelector(`template#${this.tagName.toLowerCase()}`).content.cloneNode(true);
+            let content = ownerDoc.querySelector(`template#${this.tagName.toLowerCase()}`).content.cloneNode(true);
             let docFrag = document.createDocumentFragment();
 
             /* check for any data bindings and attempt to retrieve reference to the data (objects reference only) */
