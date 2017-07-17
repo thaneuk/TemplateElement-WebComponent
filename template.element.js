@@ -196,7 +196,7 @@
          * @private
          */
         $checkWatchers() {
-            this.$watchers.length && this.$watchers.forEach(watch => {
+            this.$watchers.length && this.$watchers.filter(watch => watch !== null).forEach(watch => {
                 let newValue = this.$getBindingValue(watch.path);
 
                 if (newValue !== watch.current) {
